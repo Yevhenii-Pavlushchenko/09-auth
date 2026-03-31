@@ -8,12 +8,11 @@ import { useAuthStore } from "@/lib/store/authStore";
 import { logout } from "@/lib/api/clientApi";
 import { useRouter } from "next/navigation";
 
-export default function AuthNavigation() { 
-    const router = useRouter();
+export default function AuthNavigation() {
+  const router = useRouter();
+  const { isAuthenticated, user, clearIsAuthenticated } = useAuthStore();
 
-    const { isAuthenticated, user, clearIsAuthenticated } = useAuthStore();
-
-    const handleLogout = async () => {
+  const handleLogout = async () => {
     await logout();
 
     clearIsAuthenticated();
@@ -21,9 +20,8 @@ export default function AuthNavigation() {
     router.push("/sign-in");
   };
 
-
-    return isAuthenticated ?(
-         <>
+  return isAuthenticated ? (
+    <>
       <li className={css.navigationItem}>
         <Link href="/profile" prefetch={false} className={css.navigationLink}>
           Profile
@@ -56,5 +54,4 @@ export default function AuthNavigation() {
       </li>
     </>
   );
-    
 }

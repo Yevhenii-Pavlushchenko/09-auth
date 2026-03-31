@@ -2,6 +2,7 @@
 
 import css from "./Notes.client.module.css";
 
+import Link from "next/link";
 import { useState } from "react";
 import { useDebouncedCallback } from "use-debounce";
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
@@ -12,8 +13,7 @@ import SearchBox from "@/components/SearchBox/SearchBox";
 import NoResults from "@/components/NoResults/NoResults";
 
 import { NoteTag } from "@/types/note";
-import { fetchNotes } from "@/lib/api";
-import Link from "next/link";
+import { fetchNotes } from "@/lib/api/clientApi";
 
 interface NotesClientProps {
   tag?: NoteTag;

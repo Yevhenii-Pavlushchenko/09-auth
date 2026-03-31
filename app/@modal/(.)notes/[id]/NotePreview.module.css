@@ -55,6 +55,10 @@
 }
 
 .backBtn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+
     align-self: flex-start;
     padding: 6px 12px;
     font-size: 14px;
