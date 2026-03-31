@@ -1,7 +1,7 @@
-
 import { create } from "zustand";
-import { type CreateNoteBody } from "../api";
+
 import { persist } from "zustand/middleware";
+import { CreateNoteBody } from "../api/clientApi";
 
 type NoteDraftStore = {
   draft: CreateNoteBody;
@@ -9,7 +9,7 @@ type NoteDraftStore = {
   clearDraft: () => void;
 };
 
-export const initialDraft: CreateNoteBody = {
+const initialDraft: CreateNoteBody = {
   title: "",
   content: "",
   tag: "Todo",
