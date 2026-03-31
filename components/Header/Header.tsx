@@ -14,11 +14,12 @@ export default function Header() {
       </Link>
       <nav aria-label="Main Navigation">
         <ul className={css.navigation}>
-          {isAuthenticated && (
-            <>
-              <li className={css.navigationItem}>
+          <li className={css.navigationItem}>
                 <Link className={css.navigationLink} href="/">Home</Link>
               </li>
+          {isAuthenticated && (
+            <>
+              
               <li className={css.navigationItem}>
                 <Link className={css.navigationLink} href="/notes/filter/all">Notes</Link>
               </li>
